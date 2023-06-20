@@ -26,7 +26,7 @@ services:
       environment:
         # - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=123
-        - POSTGRES_DB=socialmedia
+        - POSTGRES_DB=connections
   #     volumes:
   #       - ./db-data/postgres/:/var/lib/postgresql/data/ 
   
