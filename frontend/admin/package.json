@@ -17,8 +17,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": " react-scripts start",
-    "build": "react-scripts build && ren build adminApp &&move adminApp ../../",
+    "start": "react-scripts start",
+    "build": "react-scripts build && ren build adminApps &&move adminApps ../../",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
