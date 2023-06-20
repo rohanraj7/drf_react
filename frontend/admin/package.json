@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && ren build adminApps &&move adminApps ../../",
+    "build": "react-scripts build && ren build adminApp && move adminApp ../../",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
