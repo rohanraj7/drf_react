@@ -4,7 +4,7 @@ FROM node:14-alpine
 WORKDIR /app/admin
 
 # Copy project 2 files and install dependencies
-COPY adminApp ./
+COPY adminns ./
 RUN npm install
 CMD ["npm", "start"]
 
