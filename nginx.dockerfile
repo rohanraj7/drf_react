@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install -y certbot
 
 # Copy the Nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Expose ports
 EXPOSE 80
