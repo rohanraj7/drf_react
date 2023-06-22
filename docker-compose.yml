@@ -67,7 +67,7 @@ services:
       - front-user
       - front-admin
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d
+      - .nginx/nginx.conf:/etc/nginx/conf.d
       - ./certbot/conf:/etc/letsencrypt  # Mount Certbot configuration
       - ./certbot/www:/var/www/certbot  # Mount Certbot challenge directory
   
