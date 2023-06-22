@@ -1,32 +1,18 @@
-worker_processes auto;
-error_log /var/log/nginx/error.log;
-pid /var/run/nginx.pid;
+# Dockerfile
 
-events {
-  worker_connections 1024;
-}
+# Use the official Nginx base image
+FROM nginx
 
-http {
-  server {
-    listen 80;
-    server_name example.com;
+# Install Certbot
+RUN apt-get update && \
+    apt-get install -y certbot
 
-    location /app1 {
-      proxy_pass http://13.48.44.26:3000;
-      proxy_set_header Host $host;
-      proxy_set_header X-Real-IP $remote_addr;
-    }
+# Copy the Nginx configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
 
-    location /app2 {
-      proxy_pass http://13.48.44.26:4000;
-      proxy_set_header Host $host;
-      proxy_set_header X-Real-IP $remote_addr;
-    }
+# Expose ports
+EXPOSE 80
+EXPOSE 443
 
-    location /api {
-      proxy_pass http://13.48.44.26:8000/api/admin/;
-      proxy_set_header Host $host;
-      proxy_set_header X-Real-IP $remote_addr;
-    }
-  }
-}
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]

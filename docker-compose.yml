@@ -50,3 +50,19 @@ services:
       - front-admin
       - postgres
 
+
+  my-nginx:
+    build:
+      context: ./
+      dockerfile: ./nginx.dockerfile
+    restart: unless-stopped
+    ports:
+    - "80:80"
+    - "443:443"
+    # volumes:
+    #   - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    #   - mediafiles:/mediafiles
+    depends_on:
+      - backend
+      - front-user
+      - front-admin
