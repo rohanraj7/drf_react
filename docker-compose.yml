@@ -66,3 +66,15 @@ services:
       - backend
       - front-user
       - front-admin
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d
+      - ./certbot/conf:/etc/letsencrypt  # Mount Certbot configuration
+      - ./certbot/www:/var/www/certbot  # Mount Certbot challenge directory
+  
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot --webroot-path=/var/www/certbot --email rohanraj9645@gmail.com --agree-tos --no-eff-email --staging -d connectout.online -d user.connectout.online -d admin.connectout.online
