@@ -122,7 +122,7 @@ function FriendprofileView() {
                         <div className="p-4 pb-0">
                             <div className="flex items-center">
                                 <div className="ml-40">
-                                    <h2 className="text-3xl font-bold">{user.username}</h2>
+                                    <h2 className="text-3xl font-bold">{username}</h2>
                                     <h1 className="text-lg font-bold dark:text-white"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">{userFirstname}</span>{' '}{userLastname}</h1>
                                 </div>
                                 {confirm ? 
