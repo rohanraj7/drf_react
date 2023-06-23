@@ -15,15 +15,21 @@ services:
     ports:
       - "4000:3000"
 
+  
+
   postgres:
-    image: postgres:14.2
-    container_name: postgres
-    restart: always
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_PASSWORD=123
-      - POSTGRES_DB=connectouts
+      image: postgres:14.2
+      container_name: postgres
+      restart: always
+      ports:
+        - "5432:5432"
+      environment:
+        # - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=123
+        - POSTGRES_DB=connectouts
+  #     volumes:
+  #       - ./db-data/postgres/:/var/lib/postgresql/data/ 
+  
 
   backend:
     build:
@@ -36,6 +42,7 @@ services:
       python manage.py migrate &&
       echo \"from connects.models import MyUser; MyUser.objects.create_superuser('admin', 'admin@example.com', 'pass')\" | python manage.py shell &&
       python manage.py runserver 0.0.0.0:8000"
+               
     ports:
       - "8000:8000"
     depends_on:
@@ -43,24 +50,31 @@ services:
       - front-admin
       - postgres
 
+
   my-nginx:
     build:
       context: ./
       dockerfile: ./nginx.dockerfile
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"  # Added to expose the HTTPS port
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - mediafiles:/mediafiles
+    - "80:80"
+    # - "443:443"
+    # volumes:
+    #   - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    #   - mediafiles:/mediafiles
     depends_on:
       - backend
       - front-user
       - front-admin
     volumes:
-      - ./.nginx/nginx.conf:/etc/nginx/conf.d/default.conf  # Adjusted the volume path
+      - .nginx/nginx.conf:/etc/nginx/conf.d
+  #     - ./certbot/conf:/etc/letsencrypt  # Mount Certbot configuration
+  #     - ./certbot/www:/var/www/certbot  # Mount Certbot challenge directory
+  
 
-volumes:
-  mediafiles:
-
+  # certbot:    
+  #   image: certbot/certbot
+  #   volumes:
+  #     - ./certbot/conf:/etc/letsencrypt
+  #     - ./certbot/www:/var/www/certbot
+  #   command: certonly --webroot --webroot-path=/var/www/certbot --email rohanraj9645@gmail.com --agree-tos --no-eff-email --staging -d connectout.online -d user.connectout.online -d admin.connectout.online
