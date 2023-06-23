@@ -100,20 +100,22 @@ function Reports() {
                                     <h1 className='text-cyan-600'>{value.report_message}</h1>
 
                                 </th>
-                                {value.post.image === "/undefined" &&
+                                {value.post.image === "/undefined" &&(
                                     <td className="px-6 py-4">
                                         <div className="rounded-md overflow-hidden  flex justify-center">
                                             {/* <img className="w-1/6" src={url + value.post.image} alt="" style={{ width: "10%" }} /> */}
                                             <p className='animate-pulse text-purple-600'>Text Type Nothing to Show</p>
                                         </div>
                                     </td>
+                                )
                                 }
-                                {value.post &&
+                                {value.post &&(
                                     <td className="px-6 py-4">
                                         <div className="rounded-md overflow-hidden  flex justify-center">
                                             <img className="w-1/6" src={url + value.post.image} alt="" style={{ width: "10%" }} />
                                         </div>
                                     </td>
+                                )
                                 }
                                 {value.video &&
                                     <td className="px-6 py-4">
