@@ -48,7 +48,7 @@ services:
     depends_on:
       - front-user
       - front-admin
-      - postgres
+      - postgres 
 
 
   my-nginx:
