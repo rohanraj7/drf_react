@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import DashboardPage from "./Pages/Dashboard/DashboardPage";
 import PrivateRouter from "./utils/PrivateRouter";
-import PageNotFound from "./components/PageNotFound";
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
           <Routes>
             <Route element={<PrivateRouter/>}>
               <Route path="/" element={<DashboardPage />} exact />
-              <Route path='*' element={<PageNotFound/>}/>
             </Route>
             <Route path="/login" element={<LoginPage />} />
           </Routes>

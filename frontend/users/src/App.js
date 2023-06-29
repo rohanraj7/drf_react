@@ -12,7 +12,6 @@ import Profilephotos from './components/Profilephotos';
 import FriendprofileView from './Pages/FriendprofileView/FriendprofileView';
 import Saved from './Pages/Saved/Saved';
 import Notification_page from './Pages/Notification/Notification_page';
-import PageNotFound from './components/PageNotFound';
 
 
 
@@ -34,7 +33,6 @@ function App() {
               <Route path='/friendprofile/:userId' element={<FriendprofileView />} />
               <Route path='/friendprofile/posts/:userId' element={<FriendprofileView />} />
               <Route path='/friendprofile/friend/:userId' element={<FriendprofileView />} />
-              <Route path='*' element={<PageNotFound/>}/>
             </Route>
             <Route path='/login' element={<Loginmode />} />
             <Route path='/signup' element={<Accountreg />} />
