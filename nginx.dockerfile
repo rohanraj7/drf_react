@@ -1,11 +1,7 @@
 # Dockerfile
 
 # Use the official Nginx base image
-FROM nginx
-
-# Install Certbot
-RUN apt-get update && \
-    apt-get install -y certbot
+FROM nginx:alpine
 
 # Copy the Nginx configuration file
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
