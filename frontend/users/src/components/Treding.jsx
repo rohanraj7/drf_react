@@ -68,7 +68,7 @@ function Treding() {
         </div>
       )}
 
-      <p>Collectionssssssssssssss</p>
+      
 
       <h1 className="text-red-400 animate-pulse font-bold mt-5">Most Liked Video</h1>
       {videos === undefined &&
