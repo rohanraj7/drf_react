@@ -108,11 +108,8 @@ def updatingPost(request,id):
     try:
         post_id = request.data['postid']
         post = Post.objects.get(id=post_id)
-        if request.data['image'] is None:
-            post.image = post.image
         if request.data['description'] is None:
             post.description = post.description
-        post.image = request.data['image']
         post.description = request.data['description']
         status = 'updated'
         post.save()
@@ -120,11 +117,8 @@ def updatingPost(request,id):
     except:
         video_id = request.data['video_id']
         video = Video.objects.get(id=video_id)
-        if request.data['video'] is None:
-            video.video = video.video
         if request.data['description'] is None:
             video.description = video.description
-        video.video = request.data['video']
         video.description = request.data['description']
         status = 'updated'
         video.save()

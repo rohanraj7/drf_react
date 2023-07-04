@@ -161,7 +161,7 @@ function Profilephotos() {
     function updatepost(e) {
         e.preventDefault()
         const formdata = new FormData()
-        formdata.append('image', imageFile)
+        // formdata.append('image', imageFile)
         formdata.append('description', description)
         formdata.append('postid', postId)
         const body = formdata
@@ -180,7 +180,7 @@ function Profilephotos() {
     function updatevideo(e) {
         e.preventDefault()
         const formdata = new FormData()
-        formdata.append('video',videoFile)
+        // formdata.append('video',videoFile)
         formdata.append('description',description)
         formdata.append('video_id',videoId)
         const body = formdata
@@ -203,12 +203,12 @@ function Profilephotos() {
                 <>
                     <div class="py-6">
                         <p className='text-gray-400'>EditPost</p>
-                        <span><p className='text-red-600 animate-pulse'>Tab On the Image to change</p></span>
+                        {/* <span><p className='text-red-600 animate-pulse'>Tab On the Image to change</p></span> */}
 
                         <form onSubmit={updatepost}>
                             <div class="flex max-w-xl bg-white shadow-lg rounded-lg overflow-hidden">
 
-                                <div class="w-1/3 bg-coverimage-container"  >
+                                {/* <div class="w-1/3 bg-coverimage-container"  >
                                     {imageFile ? (
                                         <img src={URL.createObjectURL(imageFile)} className="h-full w-full object-cover" alt='no images' />
                                     ) : (
@@ -218,7 +218,7 @@ function Profilephotos() {
                                         </>
                                     )
                                     }
-                                </div>
+                                </div> */}
                                 <div class="w-2/3 p-4 ">
                                     <h1 class="text-gray-900 font-bold text-2xl"><span>Title</span> <p className='text-blue-400'>{description}</p></h1>
 
@@ -232,7 +232,7 @@ function Profilephotos() {
                                 </div>
                             </div>
                         </form>
-                        <input type="file" style={{ display: 'none' }} onChange={handleImageChange} ref={fileInputRef} />
+                        {/* <input type="file" style={{ display: 'none' }} onChange={handleImageChange} ref={fileInputRef} /> */}
                     </div>
                 </>
             }
@@ -241,12 +241,12 @@ function Profilephotos() {
                 <>
                     <div class="py-6">
                         <p className='text-gray-400'>EditPost</p>
-                        <span><button onClick={() => fileInputRef.current.click()} className='text-red-600 animate-pulse'>Tab On  Here to change</button></span>
+                        {/* <span><button onClick={() => fileInputRef.current.click()} className='text-red-600 animate-pulse'>Tab On  Here to change</button></span> */}
 
                         <form onSubmit={updatevideo}>
                             <div class="flex max-w-xl bg-white shadow-lg rounded-lg overflow-hidden">
 
-                                <div class="w-1/3 bg-coverimage-container"  >
+                                {/* <div class="w-1/3 bg-coverimage-container"  >
                                     {videoFile ? (
                                         <video src={URL.createObjectURL(videoFile)} className="rounded-md" alt='no images' />
                                     ) : (
@@ -259,7 +259,7 @@ function Profilephotos() {
                                         </div>
                                     )}
 
-                                </div>
+                                </div> */}
                                 <div class="w-2/3 p-4 ">
                                     <h1 class="text-gray-900 font-bold text-2xl"><span>Title</span> <p className='text-blue-400'>{description}</p></h1>
 
@@ -273,7 +273,7 @@ function Profilephotos() {
                                 </div>
                             </div>
                         </form>
-                        <input type="file" accept="video/*" style={{ display: 'none' }} onChange={handleVideoChange} ref={fileInputRef} />
+                        {/* <input type="file" accept="video/*" style={{ display: 'none' }} onChange={handleVideoChange} ref={fileInputRef} /> */}
                     </div>
                 </>
             }
