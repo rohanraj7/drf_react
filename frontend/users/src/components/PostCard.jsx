@@ -372,7 +372,7 @@ function PostCard() {
                 {
                     following.length === 0 ? (
                         <div>
-                            <img style={{ marginLeft: "410px" }} src='https://media.tenor.com/tErPDtf_1SsAAAAi/mafumafu-ghost.gif' />
+                            <img style={{ marginLeft: "410px" }} src='https://media.tenor.com/images/8003e9994455e3dc5c53ee852780f8e6/tenor.gif' />
                             <h3 style={{ textAlign: "center", fontSize: "20px", marginTop: "10px", fontWeight: "600", color: "red", fontFamily: "initial" }}>No post yet !</h3>
                         </div>
                     ) : (

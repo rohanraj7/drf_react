@@ -41,7 +41,7 @@ function Treding() {
       {photo === undefined &&
         <Card>
           <div>
-            <img style={{ marginLeft: "" }} src='https://media.tenor.com/tErPDtf_1SsAAAAi/mafumafu-ghost.gif' />
+            <img style={{ marginLeft: "" }} src='https://media.tenor.com/images/8003e9994455e3dc5c53ee852780f8e6/tenor.gif' />
             <h3 style={{ textAlign: "center", fontSize: "20px", marginTop: "10px", fontWeight: "600", color: "red", fontFamily: "initial" }}>No post yet !</h3>
           </div>
           <p className='text-center'>System Maintance Please Wait</p>
@@ -74,7 +74,7 @@ function Treding() {
       {videos === undefined &&
         <Card>
           <div>
-            <img style={{ marginLeft: "" }} src='https://media.tenor.com/tErPDtf_1SsAAAAi/mafumafu-ghost.gif' />
+            <img style={{ marginLeft: "" }} src='https://media.tenor.com/images/8003e9994455e3dc5c53ee852780f8e6/tenor.gif' />
             <p style={{ fontSize: '20px', marginTop: '20px' }} className='text-center text-red-400'>No video Founded Yet .........! </p>
           </div>
           <p className='text-center'>System Maintance Please Wait</p>
