@@ -1,6 +1,6 @@
 
-export const baseUrl = 'http://connectout.online:8000/api/';
-export const url = 'http://connectout.online:8000'
+export const baseUrl = 'http://connectout.online/api/';
+export const url = 'http://connectout.online'
 export const signup = 'signup/'
 export const postimage = 'postimage/'
 export const getuser = 'getusers/'
