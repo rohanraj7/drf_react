@@ -7,7 +7,7 @@ FROM nginx:alpine
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Expose ports
-EXPOSE 80
+EXPOSE 8080
 EXPOSE 443
 
 # Start Nginx

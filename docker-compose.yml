@@ -37,12 +37,11 @@ services:
       dockerfile: ./back.dockerfile
     command: >
       sh -c "sleep 10 &&
-      python manage.py collectstatic --noinput && 
-      python manage.py makemigrations connects && 
+      python manage.py collectstatic --noinput &&
+      python manage.py makemigrations connects &&
       python manage.py migrate &&
-      echo \"from connects.models import MyUser; MyUser.objects.create_superuser('admin', 'admin@example.com', 'pass')\" | python manage.py shell &&
-      python manage.py runserver 0.0.0.0:8000"
-               
+      python manage.py shell -c 'from connects.models import MyUser; MyUser.objects.filter(username=\"admin\").exists() or MyUser.objects.create_superuser(\"admin\", \"admin@example.com\", \"pass\")' &&      
+      python manage.py runserver 0.0.0.0:8000"               
     ports:
       - "8000:8000"
     depends_on:
@@ -57,8 +56,8 @@ services:
       dockerfile: ./nginx.dockerfile
     restart: unless-stopped
     ports:
-    - "80:80"
-    # - "443:443"
+      - "80:80"
+        #- "443:443"
     # volumes:
     #   - ./nginx.conf:/etc/nginx/conf.d/default.conf
     #   - mediafiles:/mediafiles
@@ -72,9 +71,9 @@ services:
   #     - ./certbot/www:/var/www/certbot  # Mount Certbot challenge directory
   
 
-  # certbot:    
-  #   image: certbot/certbot
-  #   volumes:
-  #     - ./certbot/conf:/etc/letsencrypt
-  #     - ./certbot/www:/var/www/certbot
-  #   command: certonly --webroot --webroot-path=/var/www/certbot --email rohanraj9645@gmail.com --agree-tos --no-eff-email --staging -d connectout.online -d user.connectout.online -d admin.connectout.online
+        #certbot:
+    #image: certbot/certbot
+      #volumes:
+      #- ./certbot/conf:/etc/letsencrypt
+        # - ./certbot/www:/var/www/certbot
+        #command: certonly --webroot --webroot-path=/var/www/certbot --email rohanraj.py@gmail.com --agree-tos --no-eff-email -d connectout.online -d user.connectout.online -d admin.connectout.online -d www.connectout.online -d www.user.connectout.online -d www.admin.connectout.online
