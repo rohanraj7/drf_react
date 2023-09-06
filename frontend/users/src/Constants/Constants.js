@@ -1,6 +1,6 @@
 
-export const baseUrl = 'http://13.48.44.26:8000/api/';
-export const url = 'http://13.48.44.26:8000'
+export const baseUrl = 'http://16.171.234.239:8000/api/';
+export const url = 'http://16.171.234.239:8000'
 export const signup = 'signup/'
 export const postimage = 'postimage/'
 export const getuser = 'getusers/'
