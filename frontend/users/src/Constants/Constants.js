@@ -1,6 +1,6 @@
 
-export const baseUrl = 'http://connectout.online/api/';
-export const url = 'http://connectout.online'
+export const baseUrl = 'https://connectout.online/api/';
+export const url = 'https://connectout.online'
 export const signup = 'signup/'
 export const postimage = 'postimage/'
 export const getuser = 'getusers/'
