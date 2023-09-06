@@ -1,6 +1,6 @@
 
-export const baseUrl = 'http://16.171.234.239:8000/api/';
-export const url = 'http://16.171.234.239:8000'
+export const baseUrl = 'http://user.connectout.online:8000/api/';
+export const url = 'http://user.connectout.online:8000'
 export const signup = 'signup/'
 export const postimage = 'postimage/'
 export const getuser = 'getusers/'

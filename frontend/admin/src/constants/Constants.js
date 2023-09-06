@@ -1,6 +1,6 @@
-export const baseUrl = "http://16.171.234.239:8000/api/admin/";
+export const baseUrl = "http://admin.connectout.online:8000/api/admin/";
 
-export const url = 'http://16.171.234.239:8000'
+export const url = 'http://admin.connectout.online:8000'
 
 export const getusers = 'getusers/'
 
