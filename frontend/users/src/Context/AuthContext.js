@@ -2,6 +2,7 @@ import axios from '../Axios'
 import jwt_decode from "jwt-decode"
 import { createContext, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
+import Swal from "sweetalert2";
 
 
 
@@ -47,7 +48,7 @@ export const AuthProvider =({children})=>{
                 }
             }).catch((error)=>{
                 if(error.response.status === 401){
-                    setError({username:"Invalid Username or password",password:"invalid Username or Password"})
+                    setError({password:"Invalid Username or Password"})
                 }
             })
         }

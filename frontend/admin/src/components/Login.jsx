@@ -55,6 +55,27 @@ function Login() {
                     console.log('response: ', response)
                 }
             })
+            .catch((error) => {
+                console.error('Error during login:', error);
+
+
+                if (error.response && error.response.status === 401) {
+                    console.log('Unauthorized access. Please check your credentials.');
+                    Swal.fire(
+                        'Error!',
+                        'Unauthorized access. Please check your credentials.',
+                        'error'
+                    );
+                } else {
+                    console.log('Other error response:', error.response);
+                    // Handle other non-401 errors here
+                    Swal.fire(
+                        'Error!',
+                        'An error occurred during login. Please try again.',
+                        'error'
+                    );
+                }
+            });
         } else {
             console.log("invalid")
             setMessages(validate)
@@ -68,10 +89,12 @@ function Login() {
         if (username === "") {
             flag = true
             error.username = "Please Enter the username"
+            return error
         }
         if (password === "") {
             flag = true
             error.password = "Please Enter the Password"
+            return error
         }
         if (flag === true) {
             console.log("errorssss")
