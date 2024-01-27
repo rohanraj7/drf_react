@@ -141,7 +141,7 @@ DATABASES = {
         'USER': 'myprojectuser',
         'PASSWORD': 'password',
         'HOST': 'postgres',
-        'PORT': '5433'
+        'PORT': '5432'
     }
 }
 
