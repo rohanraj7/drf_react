@@ -137,13 +137,15 @@ WSGI_APPLICATION = 'new_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser',
+        'NAME': 'project',
+        'USER': 'projectuser',
         'PASSWORD': 'password',
         'HOST': 'postgres',
         'PORT': '5432'
     }
 }
+
+
 
 
 # Password validation
